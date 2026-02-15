@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPulse WP | AI Web Agency & Automation Experts</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="PixelPulse WP | Specialized AI Web Agency & Automation">
+    <meta name="description"
+        content="Premium Web Development, n8n Automation, and AI Solutions. We build high-performance digital architectures for forward-thinking businesses.">
+    <meta name="keywords"
+        content="AI web agency, web development Sri Lanka, n8n automation experts, machine learning integration, minimalist web design, WordPress development, UI/UX design agency">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="PixelPulse WP">
+
+    <!-- AI & Search Engine Optimization Signals -->
+    <meta name="subject" content="AI Web Development & Automation Services">
+    <meta name="topic" content="Artificial Intelligence, Web Technology, Business Automation">
+    <meta name="summary"
+        content="PixelPulse WP is a specialized agency combining modern web development with advanced AI automation (n8n, Machine Learning) to streamline business operations.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pixelpulsewp.com/">
+    <meta property="og:title" content="PixelPulse WP | AI Web Agency & Automation Experts">
+    <meta property="og:description"
+        content="We engineer high-performance web systems and automate workflows using AI. No clutter. Just pure efficiency.">
+    <meta property="og:image" content="https://pixelpulsewp.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pixelpulsewp.com/">
+    <meta property="twitter:title" content="PixelPulse WP | AI Web Agency & Automation Experts">
+    <meta property="twitter:description"
+        content="We engineer high-performance web systems and automate workflows using AI. No clutter. Just pure efficiency.">
+    <meta property="twitter:image" content="https://pixelpulsewp.com/og-image.jpg">
+
+    <!-- Structured Data for AI Knowledge Graphs (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "PixelPulse WP",
+      "image": "https://pixelpulsewp.com/logo.png",
+      "url": "https://pixelpulsewp.com",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Sri Lanka"
+      },
+      "description": "A high-end AI Web Agency specializing in Web Development, n8n Automation, Machine Learning, and UI/UX Design.",
+      "priceRange": "$$$",
+      "knowsAbout": [
+        "Web Development",
+        "Artificial Intelligence",
+        "n8n Automation",
+        "Machine Learning",
+        "WordPress",
+        "UI/UX Design"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#000000',
+                        white: '#ffffff',
+                        gray: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            500: '#737373',
+                            900: '#171717'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Typography Controls */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 20px !important;
+            /* Explicitly requested 20px limit */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        p,
+        a,
+        span,
+        div,
+        li {
+            font-size: 14px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+
+        /* Utilities */
+        .border-b-black {
+            border-bottom: 1px solid #000000;
+        }
+
+        .border-black {
+            border-color: #000000;
+        }
+
+        /* Canvas Container */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body class="antialiased opacity-0 transition-opacity duration-700 overflow-hidden" id="main-body">
+
+    <!-- Preloader -->
+    <div id="preloader"
+        class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-transform duration-1000 ease-in-out">
+        <div class="w-64 space-y-4">
+            <div class="flex justify-between font-mono text-xs font-bold uppercase tracking-widest text-black">
+                <span>System Initializing</span>
+                <span id="loader-percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 h-1">
+                <div id="loader-bar" class="w-0 h-full bg-black transition-all duration-100 ease-out"></div>
+            </div>
+            <div class="font-mono text-[10px] text-gray-500 font-medium pt-2">
+                > Loading Modules...<br>
+                > Connecting to Neural Net...
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 navbar-hidden transition-transform duration-500 delay-500">
+        <div class="px-6 h-16 flex justify-between items-center max-w-7xl mx-auto">
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-4 bg-black"></div>
+                <span class="font-bold tracking-tight text-black">PIXELPULSE WP</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 font-mono font-medium text-gray-900">
+                <a href="#services" class="hover:underline underline-offset-4 decoration-1">Services</a>
+                <a href="#why-us" class="hover:underline underline-offset-4 decoration-1">Advantage</a>
+                <a href="#contact"
+                    class="bg-black text-white px-5 py-2 hover:bg-gray-800 transition-colors font-bold">START
+                    PROJECT</a>
+            </div>
+
+            <button class="md:hidden text-black" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 space-y-6">
+        <a href="#services" class="text-black border-b border-gray-100 pb-4 font-bold">SERVICES</a>
+        <a href="#why-us" class="text-black border-b border-gray-100 pb-4 font-bold">ADVANTAGE</a>
+        <a href="#contact" class="text-black border-b border-gray-100 pb-4 font-bold">CONTACT</a>
+        <button id="close-menu" class="absolute top-6 right-6 text-black">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex items-center px-6 border-b border-gray-200 overflow-hidden">
+        <!-- Interactive Canvas Background -->
+        <canvas id="hero-canvas"></canvas>
+
+        <div class="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-16">
+            <div class="space-y-8">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-600 animate-pulse"></span>
+                    <span class="font-mono text-gray-700 font-bold text-[12px] uppercase">Online // Ready to
+                        Deploy</span>
+                </div>
+
+                <h1>
+                    Digital Architecture <br>
+                    For The AI Era
+                </h1>
+
+                <p class="text-gray-900 font-medium max-w-md leading-relaxed border-l-2 border-black pl-5">
+                    We engineer high-performance web systems. No clutter. No noise. Just pure, efficient code designed
+                    for growth.
+                </p>
+
+                <div class="flex items-center gap-6 pt-4">
+                    <a href="#contact"
+                        class="group flex items-center gap-3 border-b-2 border-black pb-1 hover:gap-5 transition-all duration-300 font-bold text-black">
+                        <span>Initiate Project</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Graphic Overlay (Right Side) -->
+            <div class="hidden md:flex justify-end relative">
+                <div
+                    class="w-64 h-64 border-2 border-black flex items-center justify-center relative bg-white/50 backdrop-blur-sm">
+                    <!-- Spinning inner elements -->
+                    <div class="absolute inset-2 border border-black/30 animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-8 border border-black/50 animate-[spin_15s_linear_infinite_reverse]">
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-mono text-[10px] uppercase mb-2 font-bold text-black">System Load</span>
+                        <span class="text-3xl font-bold font-mono text-black">100%</span>
+                    </div>
+
+                    <!-- Floating Nodes -->
+                    <div
+                        class="absolute -top-4 -right-4 w-8 h-8 bg-black text-white flex items-center justify-center font-mono text-xs font-bold">
+                        01</div>
+                    <div
+                        class="absolute -bottom-4 -left-4 w-8 h-8 bg-black text-white flex items-center justify-center font-mono text-xs font-bold">
+                        02</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Strip -->
+    <div class="border-b border-gray-200 py-3 bg-gray-100 overflow-hidden">
+        <div
+            class="flex whitespace-nowrap gap-12 font-mono text-[12px] uppercase tracking-widest text-black font-bold animate-[marquee_30s_linear_infinite]">
+            <span>Web Development</span>
+            <span>+</span>
+            <span>AI Integration</span>
+            <span>+</span>
+            <span>System Architecture</span>
+            <span>+</span>
+            <span>UI Engineering</span>
+            <span>+</span>
+            <span>Web Development</span>
+            <span>+</span>
+            <span>AI Integration</span>
+            <span>+</span>
+            <span>System Architecture</span>
+            <span>+</span>
+            <span>UI Engineering</span>
+            <span>+</span>
+            <span>Web Development</span>
+            <span>+</span>
+            <span>AI Integration</span>
+            <span>+</span>
+            <span>System Architecture</span>
+            <span>+</span>
+            <span>UI Engineering</span>
+        </div>
+    </div>
+
+    <!-- What We Do -->
+    <section id="services" class="py-24 px-6 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between md:items-end mb-16 border-b border-gray-200 pb-6">
+                <div>
+                    <span class="font-mono text-gray-600 font-bold block mb-2">01 // Services</span>
+                    <h2>Capabilities</h2>
+                </div>
+                <p class="text-gray-700 font-medium max-w-sm mt-4 md:mt-0 text-right">Precision engineered digital
+                    solutions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-300 border border-gray-300">
+                <!-- Card 1 -->
+                <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+                    <div
+                        class="w-10 h-10 bg-gray-100 flex items-center justify-center mb-8 rounded-sm group-hover:bg-black group-hover:text-white transition-colors">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="mb-4 font-bold">Web Development</h3>
+                    <p class="text-gray-900 leading-relaxed font-medium">
+                        Responsive, fast, and SEO-optimized websites built with HTML, Tailwind, and JS. No bloatware.
+                    </p>
+                    <ul class="mt-6 space-y-2 font-mono text-[12px] text-gray-700 font-bold">
+                        <li>> Landing Pages</li>
+                        <li>> Corporate Sites</li>
+                        <li>> Portfolios</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+                    <div
+                        class="w-10 h-10 bg-gray-100 flex items-center justify-center mb-8 rounded-sm group-hover:bg-black group-hover:text-white transition-colors">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="mb-4 font-bold">AI Integration</h3>
+                    <p class="text-gray-900 leading-relaxed font-medium">
+                        Smart automation and chatbots. We integrate cutting-edge AI to streamline your operations.
+                    </p>
+                    <ul class="mt-6 space-y-2 font-mono text-[12px] text-gray-700 font-bold">
+                        <li>> Custom Chatbots</li>
+                        <li>> Process Automation</li>
+                        <li>> Data Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+                    <div
+                        class="w-10 h-10 bg-gray-100 flex items-center justify-center mb-8 rounded-sm group-hover:bg-black group-hover:text-white transition-colors">
+                        <i data-lucide="layout-template" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="mb-4 font-bold">WordPress</h3>
+                    <p class="text-gray-900 leading-relaxed font-medium">
+                        Custom themes and plugin development. Scalable CMS solutions designed for performance.
+                    </p>
+                    <ul class="mt-6 space-y-2 font-mono text-[12px] text-gray-700 font-bold">
+                        <li>> Theme Dev</li>
+                        <li>> Headless WP</li>
+                        <li>> Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+                    <div
+                        class="w-10 h-10 bg-gray-100 flex items-center justify-center mb-8 rounded-sm group-hover:bg-black group-hover:text-white transition-colors">
+                        <i data-lucide="share-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="mb-4 font-bold">n8n Automation</h3>
+                    <p class="text-gray-900 leading-relaxed font-medium">
+                        Seamless workflow automation. Connect your favorite apps and automate repetitive tasks with n8n.
+                    </p>
+                    <ul class="mt-6 space-y-2 font-mono text-[12px] text-gray-700 font-bold">
+                        <li>> Custom Workflows</li>
+                        <li>> API Integrations</li>
+                        <li>> Efficiency Audits</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+                    <div
+                        class="w-10 h-10 bg-gray-100 flex items-center justify-center mb-8 rounded-sm group-hover:bg-black group-hover:text-white transition-colors">
+                        <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="mb-4 font-bold">UI/UX Design</h3>
+                    <p class="text-gray-900 leading-relaxed font-medium">
+                        User-centric interfaces that engage and convert. We design intuitive experiences for web and
+                        mobile.
+                    </p>
+                    <ul class="mt-6 space-y-2 font-mono text-[12px] text-gray-700 font-bold">
+                        <li>> Wireframing</li>
+                        <li>> Prototyping</li>
+                        <li>> User Research</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-10 hover:bg-gray-50 transition-colors group">
+                    <div
+                        class="w-10 h-10 bg-gray-100 flex items-center justify-center mb-8 rounded-sm group-hover:bg-black group-hover:text-white transition-colors">
+                        <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="mb-4 font-bold">Machine Learning</h3>
+                    <p class="text-gray-900 leading-relaxed font-medium">
+                        Custom predictive models and data solutions. Turn your data into actionable insights.
+                    </p>
+                    <ul class="mt-6 space-y-2 font-mono text-[12px] text-gray-700 font-bold">
+                        <li>> Predictive Analytics</li>
+                        <li>> NLP Solutions</li>
+                        <li>> Model Training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-24 px-6 border-b border-gray-200 bg-gray-50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <span class="font-mono text-gray-600 font-bold block mb-2">02 // The Advantage</span>
+                <h2 class="mb-8">Why PixelPulse?</h2>
+
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start group">
+                        <div class="font-mono text-gray-400 group-hover:text-black transition-colors font-bold">01</div>
+                        <div>
+                            <h4 class="mb-2 text-[16px] font-bold">Minimalist Design</h4>
+                            <p class="text-gray-800 font-medium">We strip away the non-essential. The result is a clean,
+                                focused
+                                user experience that converts.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start group">
+                        <div class="font-mono text-gray-400 group-hover:text-black transition-colors font-bold">02</div>
+                        <div>
+                            <h4 class="mb-2 text-[16px] font-bold">Performance First</h4>
+                            <p class="text-gray-800 font-medium">Speed is a feature. We optimize every line of code to
+                                ensure
+                                instant load times.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start group">
+                        <div class="font-mono text-gray-400 group-hover:text-black transition-colors font-bold">03</div>
+                        <div>
+                            <h4 class="mb-2 text-[16px] font-bold">AI-Driven</h4>
+                            <p class="text-gray-800 font-medium">We leverage the latest AI tools to deliver work faster
+                                and smarter
+                                than traditional agencies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Metric Box -->
+            <div
+                class="bg-white border-2 border-black p-8 relative shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-300">
+                <div class="absolute top-4 right-4">
+                    <div class="w-3 h-3 bg-black rounded-full animate-ping"></div>
+                </div>
+
+                <div class="h-full flex flex-col justify-between">
+                    <div class="font-mono text-[12px] uppercase text-gray-500 font-bold">
+                        > Status: Monitoring<br>
+                        > Uptime: 99.99%<br>
+                        > Security: Active
+                    </div>
+
+                    <div class="text-center py-12">
+                        <i data-lucide="globe" class="w-16 h-16 mx-auto mb-4 stroke-1 text-black"></i>
+                        <h3 class="font-mono font-bold">Global Reach</h3>
+                    </div>
+
+                    <div class="w-full bg-gray-200 h-1 mt-4">
+                        <div class="bg-black h-1 w-[85%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="font-mono text-gray-600 font-bold block mb-2">03 // Start Now</span>
+                <h2 class="mb-4">Let's Build Something</h2>
+                <p class="text-gray-700 font-medium">Ready to elevate your digital presence?</p>
+            </div>
+
+            <form class="space-y-0 border-t border-black">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="group relative md:border-r border-black border-b">
+                        <label
+                            class="absolute top-4 left-4 text-[10px] uppercase font-bold tracking-widest text-gray-500">Name</label>
+                        <input type="text"
+                            class="w-full h-24 px-4 pt-6 bg-transparent focus:bg-gray-50 outline-none transition-colors font-mono text-lg font-medium text-black"
+                            placeholder="John Doe">
+                    </div>
+                    <div class="group relative border-b border-black">
+                        <label
+                            class="absolute top-4 left-4 text-[10px] uppercase font-bold tracking-widest text-gray-500">Email</label>
+                        <input type="email"
+                            class="w-full h-24 px-4 pt-6 bg-transparent focus:bg-gray-50 outline-none transition-colors font-mono text-lg font-medium text-black"
+                            placeholder="john@example.com">
+                    </div>
+                </div>
+                <div class="group relative border-b border-black">
+                    <label
+                        class="absolute top-4 left-4 text-[10px] uppercase font-bold tracking-widest text-gray-500">Service</label>
+                    <select
+                        class="w-full h-24 px-4 pt-6 bg-transparent focus:bg-gray-50 outline-none transition-colors font-mono text-lg appearance-none cursor-pointer font-medium text-black">
+                        <option>Web Development</option>
+                        <option>WordPress Solution</option>
+                        <option>AI Integration</option>
+                        <option>n8n Automation</option>
+                        <option>UI/UX Design</option>
+                        <option>Machine Learning</option>
+                    </select>
+                    <i data-lucide="chevron-down"
+                        class="absolute right-6 top-10 pointer-events-none w-5 h-5 text-black"></i>
+                </div>
+                <div class="group relative border-b border-black">
+                    <label
+                        class="absolute top-4 left-4 text-[10px] uppercase font-bold tracking-widest text-gray-500">Message</label>
+                    <textarea
+                        class="w-full h-40 px-4 pt-8 bg-transparent focus:bg-gray-50 outline-none transition-colors resize-none font-mono text-lg font-medium text-black"
+                        placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="button" onclick="alert('Message Sent!')"
+                    class="w-full bg-black text-white h-20 text-[14px] font-bold uppercase tracking-[0.2em] hover:bg-gray-800 transition-colors flex items-center justify-center gap-4 group">
+                    Send Message
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="py-12 px-6 border-t border-gray-200 text-[12px] text-gray-600 font-bold font-mono uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
+            <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-black"></div>
+                <span class="text-black font-bold">PixelPulse WP</span>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-black transition-colors">Twitter</a>
+                <a href="#" class="hover:text-black transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-black transition-colors">GitHub</a>
+            </div>
+
+            <p>© 2026. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // Fade In Body & Preloader Logic
+        window.addEventListener('load', () => {
+            const body = document.getElementById('main-body');
+            const preloader = document.getElementById('preloader');
+            const percent = document.getElementById('loader-percent');
+            const bar = document.getElementById('loader-bar');
+
+            body.classList.remove('opacity-0');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 5 + 1;
+                if (progress > 100) progress = 100;
+
+                percent.innerText = Math.floor(progress) + '%';
+                bar.style.width = progress + '%';
+
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        preloader.classList.add('-translate-y-full'); // Slide up
+                        body.classList.remove('overflow-hidden');
+                        initCanvas();
+                    }, 200);
+                }
+            }, 50);
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        function toggleMenu() {
+            menu.classList.toggle('translate-x-full');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+        document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', toggleMenu));
+
+        // --- Canvas Animation (The "Super" Animation) ---
+        function initCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            let width, height;
+
+            // Nodes
+            let points = [];
+            const numPoints = 60; // Minimal density
+            const maxDist = 150;
+
+            function resize() {
+                width = window.innerWidth;
+                height = window.innerHeight; // Full screen canvas basically
+                canvas.width = width;
+                canvas.height = height;
+                points = [];
+                createPoints();
+            }
+
+            function createPoints() {
+                for (let i = 0; i < numPoints; i++) {
+                    points.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        size: Math.random() * 2 + 1
+                    });
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Update and Draw Points
+                for (let i = 0; i < points.length; i++) {
+                    let p = points[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Bounce edges
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    // Draw Point
+                    ctx.fillStyle = '#000000';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Connect Lines
+                    for (let j = i + 1; j < points.length; j++) {
+                        let p2 = points[j];
+                        let dist = Math.hypot(p2.x - p.x, p2.y - p.y);
+
+                        if (dist < maxDist) {
+                            ctx.strokeStyle = `rgba(0, 0, 0, ${1 - dist / maxDist})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            // Mouse Interaction
+            let mouse = { x: null, y: null };
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+
+                // Add a temporary point at mouse position to interact
+                // We handle this by checking distance to mouse in the loop if we wanted
+                // But for pure minimal look, let's keep it ambient or just subtle repelling?
+                // Let's make points move slightly towards mouse
+            });
+
+            window.addEventListener('resize', resize);
+            resize();
+            animate();
+        }
+    </script>
+</body>
+
+</html>
